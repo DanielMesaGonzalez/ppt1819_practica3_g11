@@ -219,9 +219,66 @@ public class HttpConnection implements Runnable{
             
     }
     
-    public static String obtenerFecha(){    //Queda implementar la clase para obtener la fecha
-        return null;
+    public static String obtenerFecha(){
+                
+        Calendar fecha = Calendar.getInstance();
+      
+       String cadena="";
+       int anio = fecha.get(Calendar.YEAR);
+       int mes = fecha.get(Calendar.MONTH);
+       int dia = fecha.get(Calendar.DAY_OF_MONTH);
+       int hora = fecha.get(Calendar.HOUR_OF_DAY);
+       int minuto = fecha.get(Calendar.MINUTE);
+       int segundo = fecha.get(Calendar.SECOND);
+       int dia2=fecha.get(Calendar.DAY_OF_WEEK);
+       String mes2="";
+       String diaSemana="";
+       if(dia2==1){
+           diaSemana="Sun";
+       }else if(dia2==2){
+           diaSemana="Mon";
+       }else if(dia2==3){
+           diaSemana="Tue";
+       }else if(dia2==4){
+           diaSemana="Wed";
+       }else if(dia2==5){
+           diaSemana="Thu";
+       }else if(dia2==6){
+           diaSemana="Fri";
+       }else if(dia2==7){
+           diaSemana="Sat";
+       }
        
+       if(mes==0){
+           mes2="Jan";
+       }else if(mes==1){
+           mes2="Feb";
+       }else if(mes==2){
+           mes2="Mar";
+       }else if(mes==3){
+           mes2="Apr";
+       }else if(mes==4){
+           mes2="May";
+       }else if(mes==5){
+           mes2="Jun";
+       }else if(mes==6){
+           mes2="Jul";
+       }else if(mes==7){
+           mes2="Aug";
+       }else if(mes==8){
+           mes2="Sep";
+       }else if(mes==9){
+           mes2="Oct";
+       }else if(mes==10){
+           mes2="Nov";
+       }else if(mes==11){
+           mes2="Dec";
+       }
+       
+       cadena="Date:" + " " + diaSemana+ "," + " " + dia + " " + mes2 + " " + anio
+               + " " + hora + ":" + minuto + ":" + segundo + " "  + "GMT" + "\r\n";
+       
+       return cadena;
       }
         
     
